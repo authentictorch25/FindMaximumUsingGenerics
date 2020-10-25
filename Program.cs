@@ -92,6 +92,45 @@ namespace MaxProblem
 
             return "0";
         }
+        /// <summary>
+        /// Generic method to compare three values
+        /// where T : IComparable means, inbuilt class for T is having definition of CompareTo
+        /// inheriting IComparable kind of reminds it and makes it more typeSafe
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="firstValue"></param>
+        /// <param name="secondValue"></param>
+        /// <param name="thirdValue"></param>
+        /// <returns>
+        /// Type defined while invoking
+        /// </returns>
+        public static T MaxAmongDataType<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
+        {
+            if ((firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0) ||
+                (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0) ||
+                (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0))
+            {
+                return firstValue;
+            }
+
+            if ((secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0) ||
+                (secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0) ||
+                (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0))
+            {
+                return secondValue;
+            }
+
+            if ((thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) > 0) ||
+                (thirdValue.CompareTo(secondValue) >= 0 && thirdValue.CompareTo(firstValue) > 0) ||
+                (thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) >= 0))
+            {
+                return thirdValue;
+            }
+
+            return firstValue;
+        }
+    }
+}
     }
 }
 
