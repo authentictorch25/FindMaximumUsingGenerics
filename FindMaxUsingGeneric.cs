@@ -26,7 +26,7 @@ namespace MaxProblem
             }
 
             /// <summary>
-            /// Initializes a new instance of the <see cref="FindMaxGeneric{T}"/> class.
+            /// Initializes a new instance of the <see cref="FindMaxUsingGeneric{T}"/> class.
             /// </summary>
             /// <param name="firstValue">The first value.</param>
             /// <param name="secondValue">The second value.</param>
@@ -106,5 +106,9 @@ namespace MaxProblem
                 //// End index start with 1, keep this in mind
                 return Sort(values)[^1];
             }
+        public void PrintMax()
+        {
+            Console.WriteLine("Max value is: " + MaxFromArray(values));
         }
+    }
 }
